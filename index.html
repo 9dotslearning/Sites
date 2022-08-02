@@ -18,7 +18,12 @@
     <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
     <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
+    <script>
+      /* disable cache so menu propagates appropriately */
+      $.ajaxSetup({
+          cache: false
+      });
+    </script>
 
   </head>
 
@@ -33,11 +38,12 @@
 
         </div>
 
-        <script>
+        <script> DISABLING CACHE IS NOW IN THE HEADER
         /* disable cache so it menu changes it propagates appropriately */
         $.ajaxSetup({
             cache: false
         });
+
         $(function(){
           $("#nav-placeholder").load("navbar.html");
         });
@@ -53,8 +59,8 @@
 
             <div class="menu">
               <li><span class="logo" style="color: #5e5a54;">magiCSfirst</span></li>
-              <li><a href="p5jsms/index.html">p5.js</a></li>
-              <li><a href="twine/index.html">twine</a></li>
+              <li><a href="p5jsms/">p5.js</a></li>
+              <li><a href="twine/">twine</a></li>
               <li><a href="#">scratch</a></li>
               <li><a href="about.html">about</a></li>
               <li><a href="#">blog</a></li>
@@ -86,13 +92,13 @@
             </p>
             <p style="font-size: 1rem; margin-bottom: 0.5rem;">
               Written especially for beginners and particularly for tweens and teens,
-              our lessons focus on learning coding by tinkering.
+              our lessons focus on learning by tinkering.
               They offer concrete examples and take small steps, with
               plenty of time for experimentation and lots of room for invention.
               Most importantly, in each lesson <a href="#">there's a little magic first, like this.</a>
             </p>
             <p>
-              Our blog unspools thoughts about teaching computer science
+              Our blog unspools thoughts about teaching computer science,
               with some successes and many more questions than answers.
             </p>
 
@@ -126,7 +132,7 @@
               <p style="margin-left: 1rem; color: #aaa; font-size: 1rem; font-family: arial;">updates</p>
               <ul style="font-size: 0.9rem;">
                 <li style="margin-left: 1.5rem; margin-bottom: 1rem;">
-                  <a style="color: #4c9e9e; text-decoration: none;" href="5minutes/">
+                  <a style="color: #4c9e9e; text-decoration: none;" href="p5jsms/5minutes/">
                     p5.js in 5 minutes
                   </a>
                   <span style="color: #99a814;">video</span>
@@ -148,28 +154,22 @@
           </div> <!-- column -->
         </div> <!-- row -->
 
+        <!-- footer -->
         <div class="row">
           <div class="triple-column">
-            <!--
-            <p class="footer">
-              Many thanks to Dan Shiffman at <a href="https://thecodingtrain.com/">The Coding Train</a>
-              for all his delightful and informative lessons in Processing and p5.js,
-              most especially his instructions for making the spring animation on this page.
-            </p>
-          -->
+            <div id="footer-placeholder">
 
-            <p class="footer">
-              © 2022. The text of this work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
-              Additionally, code examples are provided as <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.
-              Many thanks to Dan Shiffman at <a href="https://thecodingtrain.com/">The Coding Train</a>
-              for his delightful lessons in Processing and p5.js,
-              most especially his instructions for making the spring animation on this page.
-            </p>
-          </div>
-        </div> <!-- row -->
+            </div>
+
+            <script>
+              $(function(){
+                $("#footer-placeholder").load("footer.html");
+              });
+            </script>
+
+        </div> <!-- footer row -->
 
       </div> <!-- contents -->
-
 
     </div> <!-- wrapper -->
 
