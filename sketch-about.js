@@ -124,8 +124,8 @@ class Spring {
     this.a = a;
     this.b = b;
 
-    let colors = [color(242, 56, 71), color(139, 65, 242), color(4, 157, 217
-), color(4, 191, 123), color(242, 203, 5)];
+    let colors = [color(242, 56, 71, 100), color(139, 65, 242, 100), color(4, 157, 217, 100
+), color(4, 191, 123, 100), color(242, 203, 5, 100)];
     let whichColor = floor(random(colors.length));
     this.clr = colors[whichColor];
   }
