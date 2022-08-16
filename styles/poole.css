@@ -703,7 +703,10 @@ input[type=checkbox]{
 }
 
 .tinkerNewLine {
-  margin-bottom: 13px;
+  /* necessary for ChromeOS */
+  content: "";
+  margin: 0.5em;
+  display: block;
 }
 
 .tinkerHeadingTop {
