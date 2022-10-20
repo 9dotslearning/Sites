@@ -20,6 +20,9 @@
     <!-- <link rel="stylesheet" type="text/css" href="styles/styles.css"> -->
     <link rel="stylesheet" type="text/css" href="styles/poole.css">
     <link rel="stylesheet" type="text/css" href="styles/top-override.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
     <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
@@ -57,7 +60,7 @@
         end of Navigation bar-->
 
 
-        <!-- nav bar -->
+        <!-- 220824 OLD nav bar
         <nav class="navbar">
           <ul class="nav-links">
             <input type="checkbox" id="checkbox_toggle" />
@@ -67,25 +70,77 @@
               <li><span class="logo" style="color: #5e5a54;">magiCSfirst</span></li>
               <li><a href="p5jsms/">p5.js</a></li>
               <li><a href="twine/">twine</a></li>
+        -->
               <!-- <li><a href="#">scratch</a></li> -->
+        <!--
               <li><a href="about.html">about</a></li>
               <li><a href="https://magicsfirst.com/blog/">blog</a></li>
             </div>
           </ul>
         </nav>
+        -->
+
+<!-- 220824 new navbar -->
+        <nav>
+          <div class="navbar">
+              <i class="bx bx-menu"></i>
+              <!-- <div class="logo"><a href="https://magicsfirst.com/">CodingLab</a></div> -->
+              <div class="nav-links">
+                  <div class="sidebar-logo">
+                      <span class="logo_name">magiCSfirst</span>
+                      <i class="bx bx-x"></i>
+                  </div>
+                  <ul class="links">
+                      <!-- <li><a href="https://magicsfirst.com/">magiCSfirst</a></li> -->
+                      <li><span class="logo-style" style="color: #5e5a54;">magiCSfirst</span></li>
+
+                      <!--
+                      <li>
+                          <a href="#">HTML</a>
+                          <i class="bx bxs-chevron-down arrow htmlcss-arrow"></i>
+                          <ul class="htmlCss-sub-menu sub-menu">
+                              <li><a href="#">Web Design</a></li>
+                              <li><a href="#">Login Form</a></li>
+                              <li><a href="#">Card Design</a></li>
+                              <li><a href="#">More</a></li>
+                          </ul>                        
+                      </li>
+                      -->
+
+                      <li>
+                          <a href="p5jsms/">p5.js</a>
+                          <i class="bx bxs-chevron-down arrow js-arrow"></i>
+                          <ul class="js-sub-menu sub-menu">
+                              <li><a href="#">p5.js in 5 minutes</a></li>
+                              <li><a href="#">beginners</a></li>
+                          </ul>
+                    </li>
+                      <li><a href="twine/">twine</a></li> 
+                      <li><a href="https://magicsfirst.com/blog/">blog</a></li>
+                  </ul>
+              </div>
+          </div>
+        </nav>
+
+
+
+
+
+
+
 
 
 
         <!-- start of page -->
         <h1 class="logo">
-          <img src="images/logo920x220-transparent-d.png" width="60%" />
+          <img src="images/logo920x220-transparent-d.png" width="45%" />
         </h1>
 
         <div class="row">
           <div class="triple-column">
 
             <p style="font-size: 1rem; margin-bottom: 0.5rem;">
-              At <span class="logo">magiCSfirst</span>, you'll learn how to create art with computer science. You'll make interactive stories,
+              At <span class="logo-style">magiCSfirst</span>, you'll learn how to create art with computer science. You'll make interactive stories,
               animated drawings, digital sounds, and more. And you'll make
               that art from yet another art &mdash; the captivating art called coding.
               <!--
@@ -179,6 +234,7 @@
     </div> <!-- wrapper -->
 
     <!-- background animation -->
-    <script src="sketch.js"></script>
+    <script src="scripts/sketch.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
   </html>

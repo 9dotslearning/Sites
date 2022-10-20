@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    /* background: #3e8da8; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); */
+}
+
+nav .navbar {
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+nav .navbar .logo a {
+    color: #4c9e9e;
+    font-size: 30px;
+    font-weight: 600px;
+    text-decoration: none; 
+}
+
+nav .navbar .nav-links {
+    height: 100%;
+    line-height: 70px;
+}
+
+nav .navbar .nav-links .links {
+    display: flex; 
+}
+
+nav .navbar .nav-links .links li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0 14px;
+}
+
+nav .navbar .nav-links .links li a {
+    height: 100%;
+    color: #4c9e9e;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+nav .navbar .nav-links .links li .arrow { 
+    /* height: 100%; - 220824 was blocking visibility for submenu */
+    width: 22px;
+    line-height: 70px;
+    text-align: center;
+    color: #4c9e9e;
+    transition: all 0.3s ease;
+}
+
+nav .navbar .nav-links .links li:hover .htmlcss-arrow, 
+nav .navbar .nav-links .links li:hover .js-arrow { 
+    transform: rotate(180deg);
+}
+
+.navbar .nav-links .links .sub-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #3e8da8;
+    line-height: 40px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.navbar .nav-links .links .sub-menu li {
+    padding: 0 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .nav-links .links .sub-menu li a {
+    font-size: 15px;
+}
+
+.navbar .nav-links .links li:hover .htmlCss-sub-menu, 
+.navbar .nav-links .links li:hover .js-sub-menu {
+    display: block;
+}
+
+/*
+.navbar .bx-menu,
+.nav-links .sidebar-logo .logo_name,
+.nav-links .sidebar-logo .bx-x {
+    display: none;
+}
+*/
+
+.navbar .bx-menu,
+.nav-links .sidebar-logo .logo_name, 
+.nav-links .sidebar-logo .bx-x {
+    display: none;
+}
+
+
+@media (max-width:954px) {
+    nav .navbar {
+        max-width: 100%;
+        padding: 0 25px;
+    }
+    nav .navbar .logo a {
+        font-size: 26px;
+    }
+    nav .navbar .nav-links .links li {
+        padding: 0 10px;
+    }
+    nav .navbar .nav-links .links li a {
+        font-size: 15px;
+    }
+}
+
+
+@media(max-width:800px) {
+    nav .navbar .nav-links {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        max-width: 270px;
+        width: 100%;
+        background: #3e8da8;
+        padding: 20px;
+        line-height: 40px;
+        transition: all 0.5s ease;
+        z-index: 100;
+    }    
+    nav .navbar .nav-links .sidebar-logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar .bx-menu,
+    .nav-links .sidebar-logo .logo_name, 
+    .nav-links .sidebar-logo .bx-x {
+        color: #4c9e9e;
+        font-size: 25px;
+    }
+
+    .navbar .bx-menu,
+    .nav-links .sidebar-logo .logo_name, 
+    .nav-links .sidebar-logo .bx-x {
+        display: block;
+    }
+
+    nav .navbar .nav-links .links {
+        display: block;
+        margin-top: 20px;
+    }    
+    nav .navbar .nav-links .links li {
+        display: block;
+    }
+    .navbar .nav-links .links .sub-menu {
+        display: none;
+        position: relative;
+        top: 0;
+        left: 0;
+        box-shadow: none; 
+    }
+    .navbar .nav-links .links .sub-menu li {
+        border-bottom: none;
+    }
+    .navbar .nav-links .links li:hover .htmlCss-sub-menu, 
+    .navbar .nav-links .links li:hover .js-sub-menu {
+        display: block;
+    }
+    nav .navbar .nav-links .links li .arrow { 
+        line-height: 40px;
+        transform: rotate(0deg);
+    }
+    nav .navbar .nav-links .links li:hover .htmlcss-arrow, 
+    nav .navbar .nav-links .links li:hover .js-arrow { 
+        transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 370px){
+    nav .navbar .nav-links {
+        max-width: 100%;
+    }
+}
+

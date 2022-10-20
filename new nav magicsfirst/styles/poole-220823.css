@@ -18,6 +18,11 @@
  */
 
 
+ 
+ /* Responsive navbar from https://www.makeuseof.com/responsive-navigation-bar-using-html-and-css/ */
+
+
+ 
 /*
  * Contents
  *
@@ -39,7 +44,10 @@
  * Update the foundational and global aspects of the page.
  */
 
+/* 220730 added margin, padding 0 */
 * {
+  margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -47,7 +55,8 @@
 
 html,
 body {
-  margin: 1em;
+  /* margin: 1em; */
+  margin: 0;
   padding: 0;
 }
 
@@ -64,7 +73,7 @@ body {
   /* font-family: 'Open Sans'; */
   font-family: 'Quicksand';
   font-size: 1rem;
-  background-color: #f9f9f9; /* #f2f2f2; */
+  background-color: #f2f2f2; /* #f9f9f9;  */
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -94,6 +103,7 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 h1 {
+  margin-top: 2rem;
   font-size: 2rem;
 }
 h2 {
@@ -229,22 +239,57 @@ pre code {
 
 /*
  *
- * Columns
+ * Page structure
  *
  */
 
 .wrapper {
   max-width: 960px;
-  padding: none;
+  padding: 0 0 0 48px; /* 8/1/22 was: none; */
   margin-left:  auto;
   margin-right: auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 640px auto;
+  grid-template-columns: 65% 35%; /* 640px 360px; */
   grid-column-gap: 24px;
   grid-row-gap: 36px;
+}
+
+.grid-gallery {
+  display: grid;
+  grid-template-columns: auto;
+  grid-column-gap: 12px;
+  grid-row-gap: 36px;
+}
+
+.grid-gallery-item1 {
+  grid-column: 1 / 2;
+}
+
+.grid-gallery-item2 {
+  grid-column: 2 / 3;
+}
+
+.grid-gallery-item3 {
+  grid-column: 3 / 4;
+}
+
+.grid-gallery-item4 {
+  grid-column: 4 / 5;
+}
+
+
+.contents {
+  margin: 1em;
+}
+
+.contents .footer {
+  width: 70%;
+  margin-top: 3rem;
+  font-size: 0.7rem;
+  border-top: 1px solid #752abf;
 }
 
 .sidebar {
@@ -378,62 +423,30 @@ body {
  * Responsive navbar menu
  */
 
-/* navbar  */
-
-nav a {
- text-decoration: none;
-}
-
-nav ul {
-  padding-left: 0; /* remove padding left applied by main CSS */
-}
-
-nav li {
- list-style: none;
-}
-
-.navbar {
- display: flex;
- align-items: center;
- justify-content: space-between;
- /* padding: 20px; */
- color: #4c9e9e;
-}
-
-.nav-links a {
- color: #4c9e9e;
-}
-
-.menu {
- display: flex;
- /* flex-direction: column; */
- gap: 0.5em; /* was 1 em */
- font-size: 0.8rem;
-}
-
-.menu li a:hover {
- color: #f241f2;
- border-radius: 5px;
- transition: 0.3s ease;
-}
-
-.menu li {
- padding: 0px 28px 0px 0px;
-}
-
-input[type=checkbox]{
- display: none;
-}
 
 
-/* hamburger menu */
+/*
+ *
+ * iframe / blog
+ *
+ */
+ .iframe-container {
+   position: relative;
+   overflow: hidden; /* 220803: hidden; */
+   width: 100%;
+   padding-top: 100%;  /* 56.25%; */ /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+ }
 
-.hamburger {
- display: none;
- font-size: 24px;
- user-select: none;
-}
-
+ /* Then style the iframe to fit in the container div with full height and width */
+ .responsive-iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   width: 100%;
+   height: 100%;
+ }
 
 /*
  *
@@ -441,11 +454,6 @@ input[type=checkbox]{
  *
  *
  */
-
-.logo {
- font-family: Salsa;
-}
-
 
 
 /*
@@ -462,11 +470,11 @@ input[type=checkbox]{
    }
  }
 
+ /*(
 @media (max-width: 768px) {
 
   .menu {
      display:none;
-     /* background-color:teal; */
      right: 0;
      left: 0;
      padding: 16px 0;
@@ -478,27 +486,19 @@ input[type=checkbox]{
      transition: 0.3s ease;
   }
 
-  /* plus means 'li immediately after but not inside menu li' */
-  .menu li + li {
-     /* margin-top: 12px; */
-  }
-
-  /* ~ means input and menu share same parent (they are siblings) */
   input[type=checkbox]:checked ~ .menu{
      display: block;
   }
 
   .hamburger {
-     margin-left:  -8px; /* move hamburger icon left */
      display: block;
   }
 
-  .triple-column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    margin: 0 20px 0 0;
+  iframe p {
+    font-size: 12px;
   }
+
+  */
 
   .wrapper {
     margin: 0;
@@ -509,48 +509,59 @@ input[type=checkbox]{
 
 
 /* added 220514 */
-.showAnswers {
-  color: #407abd; /* same as link color */
-}
+/* .showAnswers {
+  color: #407abd; */ /* same as link color */
+/* }
 
 .showAnswersVisited {
   visibility: hidden;
 }
+*/
 
 /* added 220514 */
-.hidden {
+/* .hidden {
   visibility: hidden;
 }
+*/
 
 /* added 220514 */
-.visible {
+/* .visible {
   visibility: visible;
 }
+*/
 
 /* added 220520 */
 .btnPress {
   font-variant: small-caps;
 }
 
+
 /* added 220514 */
+/*
 .challengeHead {
   font-size: 1.2rem;
   padding: 6px;
   color: #fcfbfa;
   background-color: #b8b0a3;
 }
+*/
 
 /* added 220514 */
+/*
 .challenge {
   color: #5e5a54;
 }
+*/
 
 /* added 220514 */
+/*
 .clickable {
   font-variant: small-caps;
 }
+*/
 
 /* Pygments via Jekyll */
+/*
 .highlight {
   margin-bottom: 1rem;
   border-radius: 4px;
@@ -558,8 +569,10 @@ input[type=checkbox]{
 .highlight pre {
   margin-bottom: 0;
 }
+*/
 
 /* added 220520 */
+/*
 .think {
   font-size: 0.8rem;
   padding-left: -5px;
@@ -584,6 +597,7 @@ input[type=checkbox]{
   content: "\2610";
   margin-right: 10px;
 }
+*/
 
 .tinkerBullet {
   display: block;
@@ -598,7 +612,10 @@ input[type=checkbox]{
 }
 
 .tinkerNewLine {
-  margin-bottom: 13px;
+  /* necessary for ChromeOS */
+  content: "";
+  margin: 0.5em;
+  display: block;
 }
 
 .tinkerHeadingTop {
@@ -619,8 +636,6 @@ input[type=checkbox]{
   margin-top: 0;
 }
 
-/* #4c9e9e; */
-
 .tinkerHeading2Top {
   font-size: 1rem;
   font-weight: 550;
@@ -636,7 +651,7 @@ input[type=checkbox]{
   border-left: 1px solid #6b0000;
   font-size: 0.8rem;
   padding: 0.25rem;
-  margin-top: 0;>
+  margin-top: 0;
 }
 
 
